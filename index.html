@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Webapps</title>
+  <style>
+    :root {
+      color-scheme: light;
+    }
+
+    body {
+      font-family: sans-serif;
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+      background: #fff;
+      color: #111;
+    }
+
+    h1 {
+      margin-bottom: 2rem;
+    }
+
+    .kacheln {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .kachel {
+      display: block;
+      padding: 1.5rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      text-decoration: none;
+      color: inherit;
+      transition: box-shadow 0.15s ease;
+    }
+
+    .kachel:hover {
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .kachel h2 {
+      margin: 0 0 0.5rem 0;
+      font-size: 1.1rem;
+    }
+
+    .kachel p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>Webapps</h1>
+
+  <div class="kacheln">
+    <a class="kachel" href="test-app/">
+      <h2>Testapp</h2>
+      <p>Beispielprojekt zum Testen des Workflows.</p>
+    </a>
+  </div>
+</body>
+</html>

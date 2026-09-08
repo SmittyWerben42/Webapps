@@ -1,8 +1,14 @@
+﻿:root {
+  color-scheme: light;
+}
+
 body {
   font-family: sans-serif;
   max-width: 600px;
   margin: 4rem auto;
   text-align: center;
+  background: #fff;
+  color: #111;
 }
 
 button {
