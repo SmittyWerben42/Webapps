@@ -1,0 +1,18 @@
+:root {
+  color-scheme: light;
+}
+
+body {
+  font-family: sans-serif;
+  max-width: 600px;
+  margin: 4rem auto;
+  text-align: center;
+  background: #fff;
+  color: #111;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}

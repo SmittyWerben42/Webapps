@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Doppelter Zahlenstrahl</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="layout">
+    <div class="hauptbereich">
+      <div class="modus-umschalter">
+        <label class="switch-row">
+          <span class="switch">
+            <input type="checkbox" id="modus-hoch" checked>
+            <span class="slider"></span>
+          </span>
+          Hochrechnen
+        </label>
+        <label class="switch-row">
+          <span class="switch">
+            <input type="checkbox" id="modus-runter">
+            <span class="slider"></span>
+          </span>
+          Runterrechnen
+        </label>
+      </div>
+
+      <div class="strahl-karte">
+        <svg id="strahl-svg" viewBox="0 0 685 265" preserveAspectRatio="none" role="img" aria-label="Doppelter Zahlenstrahl"></svg>
+        <textarea id="einheit-oben-feld" class="einheit-feld" placeholder="Einheit" rows="2" aria-label="Einheit oben"></textarea>
+        <textarea id="einheit-unten-feld" class="einheit-feld" placeholder="Einheit" rows="2" aria-label="Einheit unten"></textarea>
+        <p id="fehler" class="fehler" hidden></p>
+      </div>
+    </div>
+
+    <div class="panel">
+      <fieldset id="hoch-felder" class="feldgruppe">
+        <legend>Hochrechnen</legend>
+        <label>Schrittgröße oben
+          <span class="zahl-mit-einheit">
+            <input type="number" id="hoch-step-top" value="6" min="0" step="1"> er-Schritte
+          </span>
+        </label>
+        <label>Schrittgröße unten
+          <span class="zahl-mit-einheit">
+            <input type="number" id="hoch-step-bottom" value="4" min="0" step="1"> er-Schritte
+          </span>
+        </label>
+        <label>Anzahl Schritte
+          <input type="number" id="hoch-count" value="3" min="1" max="60" step="1">
+        </label>
+      </fieldset>
+
+      <fieldset id="runter-felder" class="feldgruppe" hidden>
+        <legend>Runterrechnen</legend>
+        <label>Zielwert oben
+          <input type="number" id="runter-target-top" value="18">
+        </label>
+        <label>Zielwert unten
+          <input type="number" id="runter-target-bottom" value="12">
+        </label>
+
+        <div class="radio-gruppe">
+          <label><input type="radio" name="runter-modus" value="anzahl" checked> Anzahl Schritte</label>
+          <label><input type="radio" name="runter-modus" value="groesse"> Größe der Schritte</label>
+        </div>
+
+        <div id="runter-anzahl-feld">
+          <label>Anzahl Schritte
+            <input type="number" id="runter-count" value="3" min="1" max="60" step="1">
+          </label>
+        </div>
+        <div id="runter-groesse-felder" hidden>
+          <label>Schrittgröße oben
+            <span class="zahl-mit-einheit">
+              <input type="number" id="runter-step-top" value="6" min="0" step="1"> er-Schritte
+            </span>
+          </label>
+          <label>Schrittgröße unten
+            <span class="zahl-mit-einheit">
+              <input type="number" id="runter-step-bottom" value="4" min="0" step="1"> er-Schritte
+            </span>
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset class="feldgruppe">
+        <legend>Anzeige</legend>
+        <label class="switch-row">
+          <span class="switch"><input type="checkbox" id="toggle-achsen" checked><span class="slider"></span></span>
+          Zahlenstrahl-Beschriftung
+        </label>
+        <label class="switch-row">
+          <span class="switch"><input type="checkbox" id="toggle-boegen"><span class="slider"></span></span>
+          Bögen
+        </label>
+        <label class="switch-row einrueckung" id="boegen-label-row" hidden>
+          <span class="switch"><input type="checkbox" id="toggle-boegen-label" checked><span class="slider"></span></span>
+          Bögen-Beschriftung
+        </label>
+        <label class="switch-row" id="gesamtbogen-row">
+          <span class="switch"><input type="checkbox" id="toggle-gesamtbogen"><span class="slider"></span></span>
+          Gesamtbogen
+        </label>
+        <label class="switch-row einrueckung" id="gesamtbogen-label-row">
+          <span class="switch"><input type="checkbox" id="toggle-gesamtbogen-label" checked><span class="slider"></span></span>
+          Bögen-Beschriftung
+        </label>
+      </fieldset>
+
+      <fieldset class="feldgruppe">
+        <legend>Zusätzliche Werte</legend>
+        <label class="switch-row">
+          <span class="switch"><input type="checkbox" id="toggle-werte"><span class="slider"></span></span>
+          Werte eingeben
+        </label>
+        <div id="werte-liste" hidden></div>
+        <button type="button" id="werte-hinzufuegen" hidden>+ weitere Werte hinzufügen</button>
+      </fieldset>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

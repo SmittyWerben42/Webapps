@@ -1,0 +1,9 @@
+# Windows/OS-Müll
+Thumbs.db
+desktop.ini
+
+# Editor-Ordner
+.vscode/
+
+# Node, falls mal npm/Build-Tools zum Einsatz kommen
+node_modules/
